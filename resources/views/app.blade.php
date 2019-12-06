@@ -16,7 +16,7 @@
     @routes
 </head>
 
-<body class="text-gray-800 font-sans" style="background-color: #F6F6FB;">
+<body class="text-gray-800 antialiased font-sans" style="background-color: #F6F6FB;">
     @inertia
 </body>
 

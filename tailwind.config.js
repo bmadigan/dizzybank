@@ -5,7 +5,14 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Poppins", ...defaultTheme.fontFamily.sans]
-            }
+            },
+      spacing: {
+        '72': '18rem',
+        '80': '20rem'
+      },
+      padding: {
+        '5/6': '83.333333%'
+      }
         }
     },
     variants: {},
