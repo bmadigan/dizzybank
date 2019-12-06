@@ -9,12 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "dyrynda/laravel-model-uuid": "^5.0",
         "fideloper/proxy": "^4.0",
         "inertiajs/inertia-laravel": "^0.1.3",
         "laravel/framework": "^6.2",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "tightenco/ziggy": "^0.8.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/ui": "^1.1",
