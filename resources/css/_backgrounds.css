@@ -1,0 +1,14 @@
+.bg-cta {
+    background-color: #28cae4;
+}
+.bg-cta:hover {
+    background-color: #2bbdd4;
+}
+
+.bg-gradient-sidenav {
+    background-image: linear-gradient(#4c51bf, #3c366b);
+}
+.bg-sidenav {
+    background-image: linear-gradient(rgba(76, 81, 191, 0.8), rgba(60, 54, 107, 0.8)), url("/svgs/wordmark-white.svg");
+    background-size: auto;
+}

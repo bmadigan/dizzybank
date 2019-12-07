@@ -1,3 +1,56 @@
+.text-xxs {
+  font-size: 0.65rem;
+}
+.bg-cta {
+  background-color: #28cae4;
+}
+
+.bg-cta:hover {
+  background-color: #2bbdd4;
+}
+
+.bg-gradient-sidenav {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4c51bf), to(#3c366b));
+  background-image: linear-gradient(#4c51bf, #3c366b);
+}
+
+.bg-sidenav {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(76, 81, 191, 0.8)), to(rgba(60, 54, 107, 0.8))), url("/svgs/wordmark-white.svg");
+  background-image: linear-gradient(rgba(76, 81, 191, 0.8), rgba(60, 54, 107, 0.8)), url("/svgs/wordmark-white.svg");
+  background-size: auto;
+}
+.btn-sm {
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.btn-indigo {
+  background-color: #4c51bf;
+  color: #fff;
+}
+
+.btn-indigo:hover {
+  background-color: #5a67d8;
+}
+
+.btn-lite {
+  background-color: #ebf4ff;
+  color: #4c51bf;
+}
+
+.btn-lite:hover {
+  background-color: #c3dafe;
+}
+.card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -11625,29 +11678,6 @@ video {
 
 .z-auto {
   z-index: auto;
-}
-
-.text-xxs {
-  font-size: 0.65rem;
-}
-
-.bg-cta {
-  background-color: #28cae4;
-}
-
-.bg-cta:hover {
-  background-color: #2bbdd4;
-}
-
-.bg-gradient-sidenav {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4c51bf), to(#3c366b));
-  background-image: linear-gradient(#4c51bf, #3c366b);
-}
-
-.bg-sidenav {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(76, 81, 191, 0.8)), to(rgba(60, 54, 107, 0.8))), url("/svgs/wordmark-white.svg");
-  background-image: linear-gradient(rgba(76, 81, 191, 0.8), rgba(60, 54, 107, 0.8)), url("/svgs/wordmark-white.svg");
-  background-size: auto;
 }
 
 @media (min-width: 640px) {

@@ -1,0 +1,17 @@
+.btn-sm {
+    @apply rounded text-xs rounded px-4 py-2;
+}
+
+.btn-indigo {
+    @apply bg-indigo-700 text-white;
+}
+.btn-indigo:hover {
+    @apply bg-indigo-600;
+}
+
+.btn-lite {
+    @apply bg-indigo-100 text-indigo-700;
+}
+.btn-lite:hover {
+    @apply bg-indigo-200;
+}
