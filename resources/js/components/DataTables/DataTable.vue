@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-x-scroll">
+    <div class="">
         <table
             cellpadding="0"
             cellspacing="0"

@@ -15,3 +15,10 @@
 .btn-lite:hover {
     @apply bg-indigo-200;
 }
+
+.btn-pink {
+    @apply bg-pink-700 text-white;
+}
+.btn-pink:hover {
+    @apply bg-pink-600;
+}

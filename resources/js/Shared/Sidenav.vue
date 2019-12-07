@@ -22,13 +22,13 @@
                     Create A New Account
                 </button>
             </div>
-            <div class="mt-4">
+            <div class="mt-8">
                 <p class="uppercase text-xs text-indigo-200 pb-4">Accounts</p>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
                     <a href="#">Account Summary</a>
                 </div>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">My Accounts</a>
+                    <a href="#">Create An Account</a>
                 </div>
             </div>
             <div class="mt-8">
@@ -46,7 +46,7 @@
             <div class="mt-8">
                 <p class="uppercase text-xs text-indigo-200 pb-4">Services</p>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">Create An Account</a>
+                    <a href="#">Transfer Money</a>
                 </div>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
                     <a href="#">My Profile</a>

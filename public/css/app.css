@@ -46,10 +46,37 @@
 .btn-lite:hover {
   background-color: #c3dafe;
 }
+
+.btn-pink {
+  background-color: #b83280;
+  color: #fff;
+}
+
+.btn-pink:hover {
+  background-color: #d53f8c;
+}
 .card {
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.badge-active {
+  background-color: #c6f6d5;
+  color: #2f855a;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

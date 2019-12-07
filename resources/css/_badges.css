@@ -1,0 +1,7 @@
+.badge {
+    @apply text-xs uppercase rounded px-2 py-1 flex items-center;
+}
+
+.badge-active {
+    @apply bg-green-200 text-green-700;
+}
