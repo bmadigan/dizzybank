@@ -15,6 +15,7 @@
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "spatie/laravel-event-sourcing": "^1.0",
+        "spatie/laravel-model-states": "^1.4",
         "tightenco/ziggy": "^0.8.1"
     },
     "require-dev": {
@@ -48,7 +49,10 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "app/Support/Helpers.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

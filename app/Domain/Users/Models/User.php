@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Domain\Users\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Domain\Accounts\Models\Account;
 use Illuminate\Notifications\Notifiable;
+use Dyrynda\Database\Support\GeneratesUuid;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
+    public function accounts()
+    {
+        return $this->belongsToMany(Account::class);
+    }
 }
