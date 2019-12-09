@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd6f68ad2fff734e6760c49f0898744b",
+    "content-hash": "f1a3d7571cbdaea3c26b2ad30b6b682d",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -762,6 +762,68 @@
                 "laravel"
             ],
             "time": "2019-12-03T15:23:55+00:00"
+        },
+        {
+            "name": "laravel/telescope",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "05af183b914b6f8dca890eadb3edccbbc3ce887b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/05af183b914b6f8dca890eadb3edccbbc3ce887b",
+                "reference": "05af183b914b6f8dca890eadb3edccbbc3ce887b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "~5.8.0|^6.0|^7.0",
+                "moontoast/math": "^1.1",
+                "php": "^7.1.3",
+                "symfony/var-dumper": "^4.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8|^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Telescope\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "An elegant debug assistant for the Laravel framework.",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "monitoring"
+            ],
+            "time": "2019-11-23T16:51:14+00:00"
         },
         {
             "name": "laravel/tinker",
