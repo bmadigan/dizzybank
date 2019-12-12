@@ -1,8 +1,10 @@
 <?php
 
-use App\Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
+use App\Domain\Users\Models\User;
+use Illuminate\Support\Facades\DB;
 use App\Domain\Accounts\Models\Account;
+use App\Domain\Addresses\Models\Address;
 use App\Domain\Accounts\Models\AccountType;
 
 class AccountUsersTableSeeder extends Seeder
@@ -19,6 +21,9 @@ class AccountUsersTableSeeder extends Seeder
 
         // Create some random accounts with users
         $this->createSomeRandomAccounts();
+
+        // Create some random Addresses
+        $this->createRandomAddresses();
 
         // My Account
         $this->createMyAccount();
@@ -45,6 +50,15 @@ class AccountUsersTableSeeder extends Seeder
         });
     }
 
+    protected function createRandomAddresses()
+    {
+        factory(Address::class, 5)->create()->each(function ($address) {
+            //dd($address);
+            $u = User::select('id')->inRandomOrder()->first();
+            $u->addresses()->save($address);
+        });
+    }
+
     protected function createMyAccount()
     {
         $account = Account::create([
@@ -58,5 +72,7 @@ class AccountUsersTableSeeder extends Seeder
             'email'                 => 'bradmadigan@gmail.com',
             'password'              => bcrypt('password')
         ]));
+
+        $me->addresses()->save(factory(Address::class)->create());
     }
 }

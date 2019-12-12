@@ -16,6 +16,7 @@
         "laravel/horizon": "^3.4",
         "laravel/telescope": "^2.1",
         "laravel/tinker": "^2.0",
+        "predis/predis": "^1.1",
         "spatie/laravel-event-sourcing": "^1.0",
         "spatie/laravel-model-states": "^1.4",
         "tightenco/ziggy": "^0.8.1"
