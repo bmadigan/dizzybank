@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73cef85910d0af95b85de95b19a2fa57",
+    "content-hash": "bff16c556bf0cc3e53f912e85752165a",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1096,6 +1096,63 @@
                 "storage"
             ],
             "time": "2019-10-16T21:01:05+00:00"
+        },
+        {
+            "name": "lorisleiva/laravel-actions",
+            "version": "v0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lorisleiva/laravel-actions.git",
+                "reference": "707557226a27a71499123600d50f99eb29872beb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lorisleiva/laravel-actions/zipball/707557226a27a71499123600d50f99eb29872beb",
+                "reference": "707557226a27a71499123600d50f99eb29872beb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.7.*|5.8.*|^6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0.0",
+                "orchestra/testbench": "3.9.x@dev",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lorisleiva\\Actions\\ActionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lorisleiva\\Actions\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Loris LEIVA",
+                    "email": "loris.leiva@gmail.com",
+                    "homepage": "https://lorisleiva.com"
+                }
+            ],
+            "description": "Laravel components that take care of one specific task",
+            "homepage": "https://github.com/lorisleiva/laravel-actions",
+            "keywords": [
+                "action",
+                "component",
+                "controller",
+                "job",
+                "laravel"
+            ],
+            "time": "2019-11-15T12:54:47+00:00"
         },
         {
             "name": "monolog/monolog",
