@@ -10,6 +10,11 @@ class Address extends Model
 {
     use GeneratesUuid;
 
+    public static function uuid(string $uuid): self
+    {
+        return static::where('uuid', $uuid)->first();
+    }
+
     public function users()
     {
         return $this->belongsToMany(User::class);

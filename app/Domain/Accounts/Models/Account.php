@@ -22,6 +22,12 @@ class Account extends Model
     //$payments = Payment::whereState('state', [Pending::class, Paid::class]);
     //$payments = Payment::whereNotState('state', [Canceled::class]);
 
+
+    public static function uuid(string $uuid): self
+    {
+        return static::where('uuid', $uuid)->first();
+    }
+
     protected function registerStates(): void
     {
         $this

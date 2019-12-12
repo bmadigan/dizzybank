@@ -39,6 +39,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function uuid(string $uuid): self
+    {
+        return static::where('uuid', $uuid)->first();
+    }
+
     public function getRouteKeyName()
     {
         return 'uuid';
