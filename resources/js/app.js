@@ -1,7 +1,7 @@
 import "./bootstrap";
 import { InertiaApp } from "@inertiajs/inertia-vue";
 import Vue from "vue";
-//import Dropdown from "@/components/Dropdown";
+import Dropdown from "@/components/Utilities/Dropdown";
 import Toasted from "vue-toasted";
 //import VModal from "vue-js-modal";
 
@@ -10,7 +10,7 @@ Vue.use(Toasted);
 const app = document.getElementById("app");
 
 // Global components
-//Vue.component("dropdown", Dropdown);
+Vue.component("dropdown", Dropdown);
 //Vue.use(VModal);
 
 //Global Mixins

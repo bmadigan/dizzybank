@@ -6,17 +6,7 @@
                     <img src="/svgs/wordmark-color.svg" class="w-8 mr-3" />
                     <h2 class="text-white text-3xl font-semibold">Account Summary</h2>
                 </div>
-                <div class="flex items-center">
-                    <div class="mr-2">
-                        <img
-                            src="https://randomuser.me/api/portraits/women/65.jpg"
-                            class="w-8 rounded-full border-indigo-200 border-2"
-                        />
-                    </div>
-                    <div class="text-white text-sm">
-                        Brad madigan
-                    </div>
-                </div>
+                <profile-dropdown :user="$page.auth.user"></profile-dropdown>
             </div>
         </div>
 
@@ -48,5 +38,9 @@
 </template>
 
 <script>
-export default {};
+import ProfileDropdown from "./ProfileDropdown";
+
+export default {
+    components: { ProfileDropdown }
+};
 </script>
