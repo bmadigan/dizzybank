@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bff16c556bf0cc3e53f912e85752165a",
+    "content-hash": "cba12b24d18df600d984265c0fb5b153",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1920,6 +1920,74 @@
                 "uuid"
             ],
             "time": "2019-12-01T04:55:27+00:00"
+        },
+        {
+            "name": "spatie/laravel-collection-macros",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-collection-macros.git",
+                "reference": "ac3e7b7cb2e302e855e8c2abce75fe03d7e7b866"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/ac3e7b7cb2e302e855e8c2abce75fe03d7e7b866",
+                "reference": "ac3e7b7cb2e302e855e8c2abce75fe03d7e7b866",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.8.4|^6.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "amphp/parallel": "^0.2.0",
+                "amphp/parallel-functions": "^0.1.2",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "~3.8.0|^4.0",
+                "phpunit/phpunit": "^8.0",
+                "symfony/stopwatch": "^4.0"
+            },
+            "suggest": {
+                "amphp/parallel-functions": "Required when using the parallel*-macros."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\CollectionMacros\\CollectionMacroServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\CollectionMacros\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://github.com/freekmurze",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://github.com/sebastiandedeyne",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A set of useful Laravel collection macros",
+            "homepage": "https://github.com/spatie/laravel-collection-macros",
+            "keywords": [
+                "laravel-collection-macros",
+                "spatie"
+            ],
+            "time": "2019-09-04T09:36:45+00:00"
         },
         {
             "name": "spatie/laravel-event-sourcing",

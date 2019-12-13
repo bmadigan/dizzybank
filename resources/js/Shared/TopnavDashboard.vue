@@ -11,23 +11,7 @@
         </div>
 
         <div class="-mt-32 flex justify-between px-8">
-            <div class="mt-6 px-6 py-6 w-3/5 card flex justify-between">
-                <div>
-                    <h3 class="text-gray-800 text-lg font-semibold pb-2">Brad and Karen Madigan</h3>
-                    <div class="text-gray-600 text-sm">
-                        30 Texas Ave,
-                        <br />
-                        Sault Ste. Marie, Ontario
-                        <br />
-                        CA P6A 4Y8
-                    </div>
-                </div>
-                <div>
-                    <button class="btn-sm btn-lite hover:bg-indigo-200">
-                        Update Address
-                    </button>
-                </div>
-            </div>
+            <user-profile-card />
 
             <div class="text-right w-2/5 mt-3">
                 <div class="uppercase text-sm text-indigo-300 pb-1">Total Balance</div>
@@ -39,8 +23,9 @@
 
 <script>
 import ProfileDropdown from "./ProfileDropdown";
+import UserProfileCard from "@/components/Dashboard/UserProfileCard";
 
 export default {
-    components: { ProfileDropdown }
+    components: { ProfileDropdown, UserProfileCard }
 };
 </script>

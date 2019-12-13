@@ -49,6 +49,11 @@ class User extends Authenticatable
         return 'uuid';
     }
 
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class);
+    }
+
     public function accounts()
     {
         return $this->belongsToMany(Account::class);

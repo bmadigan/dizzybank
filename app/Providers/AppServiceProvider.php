@@ -37,6 +37,14 @@ class AppServiceProvider extends ServiceProvider
                         'name' => auth()->user()->name,
                         'email' => auth()->user()->email,
                         //'avatar' => gravatar_url(auth()->user()->email),
+                        'profile_name' => auth()->user()->profile->profile_name,
+                        'address' => auth()->user()->profile->address ? [
+                            'street' => auth()->user()->profile->address->street_address,
+                            'secondary' => auth()->user()->profile->address->secondary_address,
+                            'city' => auth()->user()->profile->address->city,
+                            'state' => auth()->user()->profile->address->state,
+                            'zip' => auth()->user()->profile->address->zipcode,
+                        ] : null,
                     ] : null,
                 ];
             },

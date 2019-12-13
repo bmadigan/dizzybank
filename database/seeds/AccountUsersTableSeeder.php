@@ -27,6 +27,9 @@ class AccountUsersTableSeeder extends Seeder
 
         // My Account
         $this->createMyAccount();
+
+        // Create some default User Profiles
+        $this->createUserProfiles();
     }
 
     protected function addAccountTypes()
@@ -53,7 +56,6 @@ class AccountUsersTableSeeder extends Seeder
     protected function createRandomAddresses()
     {
         factory(Address::class, 5)->create()->each(function ($address) {
-            //dd($address);
             $u = User::select('id')->inRandomOrder()->first();
             $u->addresses()->save($address);
         });
@@ -74,5 +76,19 @@ class AccountUsersTableSeeder extends Seeder
         ]));
 
         $me->addresses()->save(factory(Address::class)->create());
+    }
+
+    protected function createUserProfiles()
+    {
+        $users = User::where('id', '>', 0)->with('addresses')->get();
+
+        $users->map(function ($user) {
+            $aid = $user->addresses->first() ? $user->addresses->first()->id : null;
+            //dd($aid);
+            $user->profile()->create([
+                'profile_name' => $user->name . ' Account',
+                'address_id' => $aid,
+            ]);
+        });
     }
 }
