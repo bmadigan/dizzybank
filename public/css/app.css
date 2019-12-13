@@ -78,6 +78,16 @@
   background-color: #c6f6d5;
   color: #2f855a;
 }
+
+.badge-closed {
+  background-color: #c3dafe;
+  color: #4c51bf;
+}
+
+.badge-expired {
+  background-color: #fed7d7;
+  color: #c53030;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

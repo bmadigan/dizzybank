@@ -10,6 +10,10 @@ class AccountsController extends Controller
 {
     public function show(Request $request)
     {
-        return Inertia::render('Accounts/Show');
+        dd(auth()->user()->accounts);
+
+        return Inertia::render('Accounts/Show', [
+            'accounts' => auth()->user()->accounts
+        ]);
     }
 }

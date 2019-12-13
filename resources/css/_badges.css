@@ -5,3 +5,11 @@
 .badge-active {
     @apply bg-green-200 text-green-700;
 }
+
+.badge-closed {
+    @apply bg-indigo-200 text-indigo-700;
+}
+
+.badge-expired {
+    @apply bg-red-200 text-red-700;
+}

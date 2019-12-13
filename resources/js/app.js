@@ -27,6 +27,14 @@ Vue.filter("capitalize", function(value) {
     return value.charAt(0).toUpperCase() + value.slice(1);
 });
 
+// Truncates by words and not by characters
+Vue.filter("truncate", function(str, maxWords) {
+    const array = str.trim().split(" ");
+    const ellipsis = array.length > maxWords ? "..." : "";
+
+    return array.slice(0, maxWords).join(" ") + ellipsis;
+});
+
 new Vue({
     render: h =>
         h(InertiaApp, {
