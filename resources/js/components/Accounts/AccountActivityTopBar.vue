@@ -2,7 +2,7 @@
     <div class="flex justify-between pl-6 pr-2">
         <div class="px-6 py-6 w-3/5">
             <div class="flex items-center">
-                <h2 class="text-3xl text-indigo-700 font-semibold mr-8">{{ account.account_name }}</h2>
+                <h2 class="text-2xl text-indigo-700 font-semibold mr-8">{{ account.account_name }}</h2>
                 <status-badge :variant="account.state">
                     <svg
                         viewBox="0 0 24 24"
@@ -19,6 +19,8 @@
                     </svg>
                     <span>{{ account.state | capitalize }}</span>
                 </status-badge>
+
+                <action-dropdown :account="account" />
             </div>
             <div class="flex items-center">
                 <div class="mt-4 mr-10">
@@ -47,11 +49,12 @@
 
 <script>
 import StatusBadge from "@/components/Utilities/StatusBadge";
+import ActionDropdown from "./ActionDropdown";
 import Moment from "moment";
 
 export default {
     props: ["account", "type"],
-    components: { StatusBadge, Moment },
+    components: { StatusBadge, ActionDropdown, Moment },
     data() {
         return {
             today: Moment().format("MMM DD, YYYY")

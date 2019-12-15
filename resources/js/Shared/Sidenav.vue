@@ -32,10 +32,10 @@
             <div class="mt-8">
                 <p class="uppercase text-xs text-indigo-200 pb-4">Accounts</p>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">Account Summary</a>
+                    <inertia-link href="/">Account Summary</inertia-link>
                 </div>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">Create An Account</a>
+                    <a @click.prevent="$modal.show('create-account-modal')" class="cursor-pointer">Create An Account</a>
                 </div>
             </div>
             <div class="mt-8">

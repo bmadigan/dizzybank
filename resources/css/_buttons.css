@@ -9,6 +9,20 @@
     @apply bg-indigo-600;
 }
 
+.btn-indigo-lite {
+    @apply bg-indigo-500 text-white;
+}
+.btn-indigo-lite:hover {
+    @apply bg-indigo-400;
+}
+
+.btn-indigo-liter {
+    @apply bg-indigo-300 text-indigo-700;
+}
+.btn-indigo-liter:hover {
+    @apply bg-indigo-200;
+}
+
 .btn-green {
     @apply bg-green-700 text-white;
 }

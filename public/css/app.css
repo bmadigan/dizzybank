@@ -38,6 +38,24 @@
   background-color: #5a67d8;
 }
 
+.btn-indigo-lite {
+  background-color: #667eea;
+  color: #fff;
+}
+
+.btn-indigo-lite:hover {
+  background-color: #7f9cf5;
+}
+
+.btn-indigo-liter {
+  background-color: #a3bffa;
+  color: #4c51bf;
+}
+
+.btn-indigo-liter:hover {
+  background-color: #c3dafe;
+}
+
 .btn-green {
   background-color: #2f855a;
   color: #fff;

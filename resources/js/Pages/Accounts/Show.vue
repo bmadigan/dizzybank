@@ -18,7 +18,7 @@
                 <div class="flex items-center">
                     <button
                         @click.prevent="$modal.show('subtract-money-modal')"
-                        class="flex items-center btn-sm btn-pink mr-4"
+                        class="flex items-center btn-sm btn-indigo mr-4"
                     >
                         <svg
                             viewBox="0 0 24 24"
@@ -38,7 +38,7 @@
 
                     <button
                         @click.prevent="$modal.show('add-money-modal')"
-                        class="flex items-center btn-sm btn-green mr-4"
+                        class="flex items-center btn-sm btn-indigo mr-4"
                     >
                         <svg
                             viewBox="0 0 24 24"
@@ -55,7 +55,7 @@
                         <span>Add Money</span>
                     </button>
 
-                    <button class="flex items-center btn-sm btn-indigo">
+                    <button class="flex items-center btn-sm btn-indigo-lite">
                         <svg viewBox="0 0 24 24" class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" fill-rule="evenodd" />
                         </svg>
