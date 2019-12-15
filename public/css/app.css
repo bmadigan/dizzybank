@@ -38,6 +38,15 @@
   background-color: #5a67d8;
 }
 
+.btn-green {
+  background-color: #2f855a;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background-color: #38a169;
+}
+
 .btn-lite {
   background-color: #ebf4ff;
   color: #4c51bf;
