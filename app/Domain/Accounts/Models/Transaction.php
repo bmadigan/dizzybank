@@ -54,6 +54,15 @@ class Transaction extends Model
         ]);
     }
 
+    public function displayAmount()
+    {
+        if ($this->type === 'MoneySubtracted') {
+            return '- ' . currency($this->amount);
+        }
+
+        return '+ ' . currency($this->amount);
+    }
+
     protected static function getTransactionType($event)
     {
         return class_basename($event);

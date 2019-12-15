@@ -8,15 +8,18 @@ use Illuminate\Http\Request;
 use App\Domain\Accounts\Models\Account;
 use Illuminate\Support\Facades\Redirect;
 use App\Domain\Accounts\Aggregates\AccountAggregate;
+use App\Domain\Accounts\Resources\TransactionResource;
 
 class AccountsController extends Controller
 {
     public function show(Account $account)
     {
+        $transactions = TransactionResource::collection($account->transactions);
+
         return Inertia::render('Accounts/Show', [
             'account' => $account,
             'accountType' => $account->account_type,
-            'transactions' => $account->transactions,
+            'transactions' => $transactions,
         ]);
     }
 

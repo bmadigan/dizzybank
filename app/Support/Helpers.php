@@ -36,3 +36,15 @@ function convertCurrencyToCents($amount)
 
     return intval($newAmount[0] . $newAmount[1]);
 }
+
+function currency($amount)
+{
+    $number = $amount / 100;
+    return '$' . number_format($number, 2, '.', ',');
+}
+
+function money($amount)
+{
+    $number = $amount / 100;
+    return money_format('%i', $number);
+}

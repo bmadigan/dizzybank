@@ -70,13 +70,15 @@
                         {{ item.created_at | formatDate }}
                     </template>
                     <template v-slot:account="{ item }">
-                        {{ item.account_id }}
+                        {{ item.account_name }}
                     </template>
                     <template v-slot:description="{ item }">
                         {{ item.description }}
                     </template>
                     <template v-slot:amount="{ item }">
-                        {{ item.amount | currency }}
+                        <span :class="[{ 'text-green-700': isAdded(item) }, 'text-red-700']">
+                            {{ item.amount_display }}
+                        </span>
                     </template>
                     <template v-slot:balance="{ item }">
                         {{ item.balance | currency }}
@@ -130,6 +132,13 @@ export default {
                 { title: "Amount", key: "amount" },
                 { title: "Balance", key: "balance" }
             ];
+        },
+        isAdded(transaction) {
+            if (transaction.type === "MoneyAdded") {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 };
