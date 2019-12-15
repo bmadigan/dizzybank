@@ -5,10 +5,13 @@ import Dropdown from "@/components/Utilities/Dropdown";
 import Toasted from "vue-toasted";
 import VModal from "vue-js-modal";
 import money from "v-money";
+import moment from "moment";
 
 Vue.use(InertiaApp);
 Vue.use(Toasted);
 Vue.use(money, { precision: 2 });
+Vue.use(moment);
+
 const app = document.getElementById("app");
 
 // Global components
@@ -29,7 +32,7 @@ Vue.filter("capitalize", function(value) {
     return value.charAt(0).toUpperCase() + value.slice(1);
 });
 
-// Convert Integer to Money eg. 10050 = $100.50
+// Convert Integer to Money eg. 10050 = $100.50 (With Dollar sign)
 Vue.filter("currency", function(amount) {
     const formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -42,12 +45,23 @@ Vue.filter("currency", function(amount) {
     return formatter.format(newAmount);
 });
 
+Vue.filter("money", function(amount) {
+    const newAmount = amount / 100;
+
+    return newAmount;
+});
+
 // Truncates by words and not by characters
 Vue.filter("truncate", function(str, maxWords) {
     const array = str.trim().split(" ");
     const ellipsis = array.length > maxWords ? "..." : "";
 
     return array.slice(0, maxWords).join(" ") + ellipsis;
+});
+
+// Format Dates
+Vue.filter("formatDate", function(strDate) {
+    return moment(strDate).format("MMM DD, YYYY");
 });
 
 new Vue({

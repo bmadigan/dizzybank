@@ -16,6 +16,7 @@ class AccountsController extends Controller
         return Inertia::render('Accounts/Show', [
             'account' => $account,
             'accountType' => $account->account_type,
+            'transactions' => $account->transactions,
         ]);
     }
 
@@ -35,7 +36,7 @@ class AccountsController extends Controller
         $aggregateRoot = AccountAggregate::retrieve($account->uuid);
 
         if (request()->deposit_amount) {
-            $aggregateRoot->addMoney(convertCurrencyToCents(request()->deposit_amount));
+            $aggregateRoot->addMoney(convertCurrencyToCents(request()->deposit_amount), $account->id);
             $aggregateRoot->persist();
 
             return Redirect::back()->with('success', 'Money has been deposited');

@@ -7,14 +7,14 @@
             </div>
             <div class="flex items-center mb-3">
                 <div class="text-gray-600 text-lg font-semibold mr-1">$</div>
-                <div class="text-green-700 text-3xl font-semibold">xxxx.00</div>
+                <div class="text-green-700 text-3xl font-semibold">{{ account.balance | money }}</div>
             </div>
         </div>
         <div class="bg-indigo-100 px-6 py-2">
             <div class="flex items-center justify-between">
                 <div>
                     <div class="text-xs uppercase text-gray-500 tracking-wide">Account Number</div>
-                    <div class="text-gray-700">{{ account.account_number }}</div>
+                    <div :class="balanceText">{{ account.account_number }}</div>
                 </div>
                 <div>
                     <status-badge :variant="account.state">
@@ -48,6 +48,15 @@ export default {
     methods: {
         redirectToAccount() {
             this.$inertia.visit(route("accounts.show", this.account.uuid));
+        }
+    },
+    computed: {
+        balanceText: function() {
+            if (this.account.balance < 0) {
+                return "text-red-700";
+            } else {
+                return "text-green-700";
+            }
         }
     }
 };

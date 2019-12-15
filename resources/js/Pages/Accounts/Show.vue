@@ -44,24 +44,29 @@
                 </div>
             </div>
 
-            <div>
+            <div v-if="transactions.length > 0">
                 <data-table :headers="headers()" sort-url="/" :data="transactions">
                     <template v-slot:date="{ item }">
-                        {{ item.date }}
+                        {{ item.created_at | formatDate }}
                     </template>
                     <template v-slot:account="{ item }">
-                        {{ item.account }}
+                        {{ item.account_id }}
                     </template>
                     <template v-slot:description="{ item }">
                         {{ item.description }}
                     </template>
                     <template v-slot:amount="{ item }">
-                        {{ item.amount }}
+                        {{ item.amount | currency }}
                     </template>
                     <template v-slot:balance="{ item }">
-                        {{ item.balance }}
+                        {{ item.balance | currency }}
                     </template>
                 </data-table>
+            </div>
+            <div v-else>
+                <div class="text-center py-10 text-xl bg-white rounded">
+                    There hasn't been any transactions for this account yet.
+                </div>
             </div>
         </div>
 
@@ -79,7 +84,7 @@ import DataTableHeader from "@/components/DataTables/DataTableHeader";
 import DataTableRow from "@/components/DataTables/DataTableRow";
 
 export default {
-    props: ['account', 'accountType'],
+    props: ['account', 'accountType', 'transactions'],
     components: {
         AppLayout,
         ProfileDropdown,
@@ -90,45 +95,7 @@ export default {
         DataTableRow
     },
     mounted() {
-        document.title = `AccountName - ${this.$page.app.name}`;
-    },
-    data() {
-        return {
-            transactions: [
-                {
-                    id: 1,
-                    date: "Aug 3, 2019",
-                    account: "Everyday Savings",
-                    description: "Lorum ipsuem",
-                    amount: 100.0,
-                    balance: 599.99
-                },
-                {
-                    id: 1,
-                    date: "Aug 5, 2019",
-                    account: "Borderless Plans",
-                    description: "Lorum ipsuem",
-                    amount: 200.0,
-                    balance: 299.99
-                },
-                {
-                    id: 1,
-                    date: "Aug 7, 2019",
-                    account: "Everyday Savings",
-                    description: "Lorum ipsuem",
-                    amount: 130.0,
-                    balance: 49.99
-                },
-                {
-                    id: 1,
-                    date: "Aug 12, 2019",
-                    account: "Everyday Savings",
-                    description: "Lorum ipsuem",
-                    amount: 140.0,
-                    balance: 99.99
-                }
-            ]
-        };
+        document.title = `${this.account.account_name} - ${this.$page.app.name}`;
     },
     methods: {
         headers() {
@@ -140,6 +107,6 @@ export default {
                 { title: "Balance", key: "balance" }
             ];
         }
-    }
+    },
 };
 </script>

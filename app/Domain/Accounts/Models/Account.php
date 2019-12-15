@@ -54,6 +54,11 @@ class Account extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
     public function account_type()
     {
         return $this->belongsTo(AccountType::class);

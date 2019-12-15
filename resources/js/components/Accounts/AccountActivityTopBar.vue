@@ -38,7 +38,9 @@
 
         <div class="text-right w-2/5 mt-12">
             <div class="uppercase text-sm text-gray-500">Total Balance</div>
-            <div class="text-4xl text-green-700 font-semibold">{{ account.balance | currency }}</div>
+            <div class="text-4xl text-green-700 font-semibold" :class="balanceText">
+                {{ account.balance | currency }}
+            </div>
         </div>
     </div>
 </template>
@@ -54,6 +56,15 @@ export default {
         return {
             today: Moment().format("MMM DD, YYYY")
         };
+    },
+    computed: {
+        balanceText: function() {
+            if (this.account.balance < 0) {
+                return "text-red-700";
+            } else {
+                return "text-green-700";
+            }
+        }
     }
 };
 </script>
