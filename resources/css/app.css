@@ -6,5 +6,7 @@
 @import "_buttons.css";
 @import "_cards.css";
 @import "_badges.css";
+@import "_modals.css";
+@import "_forms.css";
 
 @tailwind utilities;

@@ -1,0 +1,17 @@
+.modal-container {
+    z-index: 99999999999999999999;
+    padding: 0px !important;
+    @apply bg-white rounded-lg;
+}
+
+.modal-content {
+    @apply h-full rounded-none relative p-0 text-xs;
+}
+
+.modal-footer {
+    @apply rounded-none bottom-0 absolute w-full bg-indigo-100;
+}
+
+.v--modal {
+    @apply p-0 rounded-lg bg-indigo-600;
+}

@@ -18,7 +18,10 @@
         </div>
         <div class="px-6">
             <div class="pb-4 flex justify-center">
-                <button class="w-48 rounded-lg text-sm bg-cta text-white py-3 px-2">
+                <button
+                    @click.prevent="$modal.show('create-account-modal')"
+                    class="w-48 rounded-lg text-sm bg-cta text-white py-3 px-2"
+                >
                     Create A New Account
                 </button>
             </div>
@@ -53,9 +56,15 @@
                 </div>
             </div>
         </div>
+
+        <create-account-modal></create-account-modal>
     </section>
 </template>
 
 <script>
-export default {};
+import CreateAccountModal from "@/Pages/Accounts/CreateAccountModal";
+
+export default {
+    components: { CreateAccountModal }
+};
 </script>

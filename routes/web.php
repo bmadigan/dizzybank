@@ -8,6 +8,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Accounts
     Route::get('accounts')->uses('AccountsController@show')->name('accounts.show');
+    Route::post('accounts')->uses('AccountsController@store')->name('accounts.store');
     Route::post('articles', '\App\Domain\Accounts\Actions\CreateNewAccountAction');
 
     // Test / Delete this

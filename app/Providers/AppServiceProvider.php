@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
+use App\Domain\Accounts\Models\AccountType;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -47,6 +48,9 @@ class AppServiceProvider extends ServiceProvider
                         ] : null,
                     ] : null,
                 ];
+            },
+            'accountTypes' => function () {
+                return AccountType::all()->toArray();
             },
             'flash' => function () {
                 return [
