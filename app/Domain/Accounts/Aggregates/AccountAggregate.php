@@ -3,6 +3,8 @@
 namespace App\Domain\Accounts\Aggregates;
 
 use Spatie\EventSourcing\AggregateRoot;
+use App\Domain\Accounts\Events\MoneyAdded;
+use App\Domain\Accounts\Events\MoneySubtracted;
 use App\Domain\Accounts\Events\AccountCreated;
 
 final class AccountAggregate extends AggregateRoot
@@ -14,13 +16,17 @@ final class AccountAggregate extends AggregateRoot
         return $this;
     }
 
-    // public function addMoney(int $amount)
-    // {
-    //     $this->recordThat(new MoneyAdded($amount));
-    // }
+    public function addMoney(int $amount)
+    {
+        $this->recordThat(new MoneyAdded($amount));
 
-    // public function subtractAmount(int $amount)
-    // {
-    //     $this->recordThat(new MoneySubtracted($amount));
-    // }
+        return $this;
+    }
+
+    public function subtractMoney(int $amount)
+    {
+        $this->recordThat(new MoneySubtracted($amount));
+
+        return $this;
+    }
 }

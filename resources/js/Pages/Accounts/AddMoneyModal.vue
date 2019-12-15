@@ -1,10 +1,10 @@
 <template>
     <modal
-        name="create-account-modal"
+        name="add-money-modal"
         :draggable="false"
         :scrollable="false"
-        :height="380"
-        :width="410"
+        :height="280"
+        :width="400"
         :clickToClose="false"
         classes="modal-container"
     >
@@ -14,7 +14,7 @@
                     <div class="flex items-center justify-between border-b border-gray-200 py-6 px-4">
                         <div class="flex items-center">
                             <img src="/svgs/wordmark-color.svg" class="w-8 mr-3" />
-                            <h2 class="text-gray-800 font-semibold text-xl">Create A New Account</h2>
+                            <h2 class="text-gray-800 font-semibold text-xl">Add Money</h2>
                         </div>
                         <svg
                             @click="cancel"
@@ -35,23 +35,12 @@
                     <div class="mt-6 justify-center w-full">
                         <div class="pb-4 px-4 flex justify-between items-center">
                             <label class="block">
-                                <span class="text-gray-700 w-full">Account type</span>
-                                <select class="form-select mt-1 block w-full" v-model="form.accountTypeId">
-                                    <option disabled value="">Select An Account Type</option>
-                                    <option v-for="(type, index) in accountTypes" v-bind:value="type.id">
-                                        {{ type.type_name }}
-                                    </option>
-                                </select>
-                            </label>
-                        </div>
-
-                        <div class="pb-4 px-4 flex justify-between items-center">
-                            <label class="block">
-                                <span class="text-gray-700 w-full">Account Name</span>
+                                <span class="text-gray-700 w-full">Deposit Amount</span>
                                 <input
-                                    v-model="form.accountName"
+                                    v-model="form.deposit_amount"
+                                    v-money="money"
                                     class="form-input mt-1 block w-full"
-                                    placeholder="Eg. Family Savings Account ..."
+                                    placeholder="$0.00"
                                 />
                             </label>
                         </div>
@@ -62,9 +51,10 @@
                     <div class="p-6 text-right">
                         <button
                             type="submit"
+                            name="addMoney"
                             class="bg-indigo-700 hover:bg-indigo-600 text-white rounded text-xs px-4 py-2"
                         >
-                            Create Account
+                            Deposit
                         </button>
                     </div>
                 </div>
@@ -75,18 +65,25 @@
 
 <script>
 export default {
+    props: ["account"],
     data() {
         return {
-            accountTypes: [],
             form: {
-                accountTypeId: 1,
-                accountName: ""
+                account_uuid: this.account.uuid,
+                deposit_amount: 0.0
+            },
+            money: {
+                decimal: ".",
+                thousands: ",",
+                prefix: "$ ",
+                precision: 2,
+                masked: false /* doesn't work with directive */
             }
         };
     },
     methods: {
         submitForm() {
-            this.$inertia.post(route("accounts.store"), this.form).then(() => {
+            this.$inertia.patch(route("accounts.update", this.account.uuid), this.form).then(() => {
                 this.resetForm();
                 this.close();
             });
@@ -96,15 +93,11 @@ export default {
             this.close();
         },
         resetForm() {
-            this.form.accountTypeId = 1;
-            this.form.accountName = "";
+            this.form.deposit_amount = 0.0;
         },
         close() {
-            this.$modal.hide("create-account-modal");
+            this.$modal.hide("add-money-modal");
         }
-    },
-    mounted() {
-        this.accountTypes = this.$page.accountTypes;
     }
 };
 </script>

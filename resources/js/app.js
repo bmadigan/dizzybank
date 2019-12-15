@@ -4,9 +4,11 @@ import Vue from "vue";
 import Dropdown from "@/components/Utilities/Dropdown";
 import Toasted from "vue-toasted";
 import VModal from "vue-js-modal";
+import money from "v-money";
 
 Vue.use(InertiaApp);
 Vue.use(Toasted);
+Vue.use(money, { precision: 2 });
 const app = document.getElementById("app");
 
 // Global components
@@ -25,6 +27,19 @@ Vue.filter("capitalize", function(value) {
     if (!value) return "";
     value = value.toString();
     return value.charAt(0).toUpperCase() + value.slice(1);
+});
+
+// Convert Integer to Money eg. 10050 = $100.50
+Vue.filter("currency", function(amount) {
+    const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2
+    });
+
+    const newAmount = amount / 100;
+
+    return formatter.format(newAmount);
 });
 
 // Truncates by words and not by characters

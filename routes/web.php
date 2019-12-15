@@ -9,8 +9,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Accounts
     Route::get('accounts/{account}')->uses('AccountsController@show')->name('accounts.show');
     Route::post('accounts')->uses('AccountsController@store')->name('accounts.store');
-    Route::post('articles', '\App\Domain\Accounts\Actions\CreateNewAccountAction');
+    Route::patch('accounts/{account}')->uses('AccountsController@update')->name('accounts.update');
+    //Route::post('articles', '\App\Domain\Accounts\Actions\CreateNewAccountAction');
 
-    // Test / Delete this
-    Route::get('test')->uses('AccountController@index');
 });

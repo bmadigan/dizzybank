@@ -26,7 +26,9 @@
                         <span>Transfer Money</span>
                     </button>
 
-                    <button class="flex items-center btn-sm btn-pink mr-4">
+                    <button
+                        @click.prevent="$modal.show('add-money-modal')"
+                        class="flex items-center btn-sm btn-pink mr-4">
                         <svg viewBox="0 0 24 24" class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
                             <path fill-rule="evenodd" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10z"/>
                         </svg>
@@ -62,12 +64,15 @@
                 </data-table>
             </div>
         </div>
+
+        <add-money-modal :account="account" />
     </app-layout>
 </template>
 
 <script>
 import AppLayout from "@/Shared/Layouts/App";
 import ProfileDropdown from "@/Shared/ProfileDropdown";
+import AddMoneyModal from "./AddMoneyModal";
 import AccountActivityTopBar from "@/components/Accounts/AccountActivityTopBar";
 import DataTable from "@/components/DataTables/DataTable";
 import DataTableHeader from "@/components/DataTables/DataTableHeader";
@@ -78,6 +83,7 @@ export default {
     components: {
         AppLayout,
         ProfileDropdown,
+        AddMoneyModal,
         AccountActivityTopBar,
         DataTable,
         DataTableHeader,
