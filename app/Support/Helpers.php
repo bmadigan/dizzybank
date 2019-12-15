@@ -12,15 +12,13 @@ function generateAccountNumber()
 
 /**
  * Convert money from UI into cents
- *
- * @param $amount
- * @return int|string
  */
 function convertCurrencyToCents($amount)
 {
     $amount = str_replace('$', '', $amount);
     $amount = str_replace(',', '', $amount);
     $amount = str_replace(' ', '', $amount);
+    $amount = str_replace('-', '', $amount);
 
     // If theres a . we need to account for that.
     $newAmount = explode('.', $amount);
