@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click.prevent="redirectToAccount()">
         <div class="px-6 py-3">
             <div class="flex items-center mb-3">
                 <img src="/svgs/wordmark-color.svg" class="w-6 mr-2" />
@@ -44,6 +44,11 @@ import StatusBadge from "@/components/Utilities/StatusBadge";
 
 export default {
     props: ["account"],
-    components: { StatusBadge }
+    components: { StatusBadge },
+    methods: {
+        redirectToAccount() {
+            this.$inertia.visit(route("accounts.show", this.account.uuid));
+        }
+    }
 };
 </script>

@@ -22,6 +22,10 @@ class Account extends Model
     //$payments = Payment::whereState('state', [Pending::class, Paid::class]);
     //$payments = Payment::whereNotState('state', [Canceled::class]);
 
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
 
     public static function uuid(string $uuid): self
     {

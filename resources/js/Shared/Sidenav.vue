@@ -1,7 +1,11 @@
 <template>
     <section class="flex-shrink-0 bg-gradient-sidenav text-indigo-500 w-72">
         <div class="flex justify-center py-8">
-            <div><img src="/svgs/logo-white.svg" class="w-48" /></div>
+            <div>
+                <inertia-link href="/">
+                    <img src="/svgs/logo-white.svg" class="w-48" />
+                </inertia-link>
+            </div>
         </div>
         <div class="flex sm:hidden">
             <!--/hamburder?-->

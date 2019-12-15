@@ -6,7 +6,7 @@
                     <img src="/svgs/wordmark-color.svg" class="w-8 mr-3" />
                     <h2 class="text-white text-3xl font-semibold">Account Summary</h2>
                 </div>
-                <profile-dropdown :user="$page.auth.user"></profile-dropdown>
+                <profile-dropdown :user="$page.auth.user" theme="dashboard"></profile-dropdown>
             </div>
         </div>
 

@@ -11,12 +11,13 @@ use App\Domain\Accounts\Aggregates\AccountAggregate;
 
 class AccountsController extends Controller
 {
-    public function show(Request $request)
+    public function show(Account $account)
     {
         //dd(auth()->user()->accounts);
 
         return Inertia::render('Accounts/Show', [
-            'accounts' => auth()->user()->accounts
+            'account' => $account,
+            'accountType' => $account->account_type,
         ]);
     }
 

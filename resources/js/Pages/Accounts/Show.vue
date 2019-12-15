@@ -1,5 +1,17 @@
 <template>
     <app-layout>
+            <div class="bg-white px-8 pt-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <img src="/svgs/wordmark-color.svg" class="w-8 mr-3" />
+                        <h2 class="text-gray-800 text-3xl font-semibold">Account Activity</h2>
+                    </div>
+                    <profile-dropdown :user="$page.auth.user" theme="app"></profile-dropdown>
+                </div>
+
+                <account-activity-top-bar :account="account" :type="accountType" />
+            </div>
+
         <div class="px-8 mt-10">
             <div class="flex items-center justify-between mt-12 mb-10">
                 <h2 class="text-2xl text-gray-600 font-semibold">Latest Transactions</h2>
@@ -55,19 +67,24 @@
 
 <script>
 import AppLayout from "@/Shared/Layouts/App";
+import ProfileDropdown from "@/Shared/ProfileDropdown";
+import AccountActivityTopBar from "@/components/Accounts/AccountActivityTopBar";
 import DataTable from "@/components/DataTables/DataTable";
 import DataTableHeader from "@/components/DataTables/DataTableHeader";
 import DataTableRow from "@/components/DataTables/DataTableRow";
 
 export default {
+    props: ['account', 'accountType'],
     components: {
         AppLayout,
+        ProfileDropdown,
+        AccountActivityTopBar,
         DataTable,
         DataTableHeader,
         DataTableRow
     },
     mounted() {
-        document.title = `Dashboard - ${this.$page.app.name}`;
+        document.title = `AccountName - ${this.$page.app.name}`;
     },
     data() {
         return {

@@ -9,7 +9,7 @@
                             class="w-8 rounded-full border-indigo-200 border-2"
                         />
                     </div>
-                    <div class="text-white text-sm">
+                    <div class="text-sm" :class="textColor">
                         {{ user.name }}
                     </div>
                 </div>
@@ -31,14 +31,18 @@
 
 <script>
 export default {
-    props: ["user"],
+    props: ["user", "theme"],
     data() {
         return {
-            csrfToken: null
+            csrfToken: null,
+            useTheme: "dashboard",
+            textColor: ""
         };
     },
     mounted() {
         this.csrfToken = this.$page._token;
+        this.useTheme = this.theme;
+        this.setTheme();
     },
     methods: {
         async logout() {
@@ -47,6 +51,13 @@ export default {
             });
 
             window.location.href = "/";
+        },
+        setTheme() {
+            if (this.useTheme === "dashboard") {
+                this.textColor = "text-white";
+            } else {
+                this.textColor = "text-gray-800";
+            }
         }
     }
 };
