@@ -23,22 +23,25 @@
                 <li class="pl-2 pr-8 py-2 hover:bg-gray-200">
                     <a @click.prevent="$modal.show('edit-account-modal')" class="block">Update Account Name</a>
                 </li>
-                <li class="pl-2 pr-8 py-2 hover:bg-gray-200">
-                    <a href="#">Close Account</a>
+                <li class="pl-2 pr-8 py-2 text-red-700 bg-red-100 hover:bg-red-200">
+                    <a @click.prevent="$modal.show('close-account-modal')" href="#">Close Account</a>
                 </li>
             </ul>
         </div>
         <edit-account-modal :account="account" />
+        <close-account-modal :account="account" />
     </dropdown>
 </template>
 
 <script>
 import EditAccountModal from "@/Pages/Accounts/EditAccountModal";
+import CloseAccountModal from "@/Pages/Accounts/CloseAccountModal";
 
 export default {
     props: ["account"],
     components: {
-        EditAccountModal
+        EditAccountModal,
+        CloseAccountModal
     }
 };
 </script>

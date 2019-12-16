@@ -9,7 +9,7 @@
                 <profile-dropdown :user="$page.auth.user" theme="app"></profile-dropdown>
             </div>
 
-            <account-activity-top-bar :account="account" :type="accountType" />
+            <account-activity-top-bar :account="account" :type="accountType" :isActive="isActive" />
         </div>
 
         <div class="px-8 mt-10">
@@ -17,6 +17,7 @@
                 <h2 class="text-2xl text-gray-600 font-semibold">Latest Transactions</h2>
                 <div class="flex items-center">
                     <button
+                        v-if="isActive"
                         @click.prevent="$modal.show('subtract-money-modal')"
                         class="flex items-center btn-sm btn-indigo mr-4"
                     >
@@ -37,6 +38,7 @@
                     </button>
 
                     <button
+                        v-if="isActive"
                         @click.prevent="$modal.show('add-money-modal')"
                         class="flex items-center btn-sm btn-indigo mr-4"
                     >
@@ -109,7 +111,7 @@ import DataTableHeader from "@/components/DataTables/DataTableHeader";
 import DataTableRow from "@/components/DataTables/DataTableRow";
 
 export default {
-    props: ["account", "accountType", "transactions"],
+    props: ["account", "isActive", "accountType", "transactions"],
     components: {
         AppLayout,
         ProfileDropdown,

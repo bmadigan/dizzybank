@@ -14,6 +14,12 @@ abstract class AccountState extends State
         $this->account = $account;
     }
 
+    public static $states = [
+        Active::class,
+        Closed::class,
+        Expired::class,
+    ];
+
     public function isActive()
     {
         return $this->is(Active::class);

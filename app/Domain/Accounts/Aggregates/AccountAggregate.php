@@ -6,6 +6,7 @@ use Spatie\EventSourcing\AggregateRoot;
 use App\Domain\Accounts\Events\MoneyAdded;
 use App\Domain\Accounts\Events\MoneySubtracted;
 use App\Domain\Accounts\Events\AccountCreated;
+use App\Domain\Accounts\Events\AccountClosed;
 
 final class AccountAggregate extends AggregateRoot
 {
@@ -26,6 +27,13 @@ final class AccountAggregate extends AggregateRoot
     public function subtractMoney(int $amount)
     {
         $this->recordThat(new MoneySubtracted($amount));
+
+        return $this;
+    }
+
+    public function closeAccount()
+    {
+        $this->recordThat(new AccountClosed());
 
         return $this;
     }

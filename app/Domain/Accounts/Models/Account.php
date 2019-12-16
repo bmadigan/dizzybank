@@ -14,11 +14,6 @@ use App\Domain\Accounts\States\AccountState;
 class Account extends Model
 {
     use HasStates, GeneratesUuid;
-    //$account->state->transitionTo(Closed::class);
-    //echo $account->state->isActive();
-    // $account = Account::create([
-    //'state' => Active::class,
-    //]);
     //$payments = Payment::whereState('state', [Pending::class, Paid::class]);
     //$payments = Payment::whereNotState('state', [Canceled::class]);
 
@@ -34,10 +29,10 @@ class Account extends Model
 
     protected function registerStates(): void
     {
-        $this
-            ->addState('state', AccountState::class)
-            //->allowTransition(Active::class, Closed::class, Expired::class)
-            ->default(Active::class);
+        $this->addState('state', AccountState::class)
+            ->default(Active::class)
+            ->allowTransition(Active::class, Closed::class);
+        //->allowTransition(Active::class, Expired::class)
     }
 
     protected static function boot()

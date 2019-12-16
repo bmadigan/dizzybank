@@ -20,7 +20,7 @@
                     <span>{{ account.state | capitalize }}</span>
                 </status-badge>
 
-                <action-dropdown :account="account" />
+                <action-dropdown v-if="isActive" :account="account" />
             </div>
             <div class="flex items-center">
                 <div class="mt-4 mr-10">
@@ -53,7 +53,7 @@ import ActionDropdown from "./ActionDropdown";
 import Moment from "moment";
 
 export default {
-    props: ["account", "type"],
+    props: ["account", "type", "isActive"],
     components: { StatusBadge, ActionDropdown, Moment },
     data() {
         return {

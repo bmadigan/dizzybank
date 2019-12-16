@@ -18,6 +18,7 @@ class AccountsController extends Controller
 
         return Inertia::render('Accounts/Show', [
             'account' => $account,
+            'isActive' => $account->state->isActive(),
             'accountType' => $account->account_type,
             'transactions' => $transactions,
         ]);
@@ -62,6 +63,15 @@ class AccountsController extends Controller
             $account->save();
 
             return Redirect::back()->with('success', 'Account Name Updated!');
+        }
+
+        // Close Account
+        if (request()->isClosed == '1') {
+            $aggregateRoot = AccountAggregate::retrieve($account->uuid);
+            $aggregateRoot->closeAccount();
+            $aggregateRoot->persist();
+
+            return Redirect::route('dashboard')->with('success', 'The account has been closed.');
         }
     }
 }
