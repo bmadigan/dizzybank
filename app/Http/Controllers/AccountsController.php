@@ -38,6 +38,7 @@ class AccountsController extends Controller
     {
         $aggregateRoot = AccountAggregate::retrieve($account->uuid);
 
+        // Deposit Some Money
         if (request()->deposit_amount) {
             $aggregateRoot->addMoney(convertCurrencyToCents(request()->deposit_amount), $account->id);
             $aggregateRoot->persist();
@@ -45,11 +46,22 @@ class AccountsController extends Controller
             return Redirect::back()->with('success', 'Money has been deposited');
         }
 
+        // Widthdraw some Money
         if (request()->withdraw_amount) {
             $aggregateRoot->subtractMoney(convertCurrencyToCents(request()->withdraw_amount));
             $aggregateRoot->persist();
 
             return Redirect::back()->with('success', 'Money has been withdrawn');
+        }
+
+        // Update Account Name
+        if (request()->account_name) {
+            request()->validate(['account_name' => 'bail|required']);
+
+            $account->account_name = request()->account_name;
+            $account->save();
+
+            return Redirect::back()->with('success', 'Account Name Updated!');
         }
     }
 }
