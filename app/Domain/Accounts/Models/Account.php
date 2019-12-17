@@ -58,4 +58,9 @@ class Account extends Model
     {
         return $this->belongsTo(AccountType::class);
     }
+
+    public function scopeActive($query)
+    {
+        return $query->whereState('state', Active::class);
+    }
 }

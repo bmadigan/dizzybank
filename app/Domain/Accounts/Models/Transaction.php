@@ -23,7 +23,7 @@ class Transaction extends Model
 
     public function account()
     {
-        return $this->belongsTo(Account::class);
+        return $this->belongsTo(Account::class)->active();
     }
 
     public static function moneyAdded(MoneyAdded $event, $uuid)

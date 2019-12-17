@@ -3,6 +3,7 @@
 namespace App\Domain\Users\Models;
 
 use App\Domain\Accounts\Models\Account;
+use App\Domain\Accounts\States\Active;
 use App\Domain\Addresses\Models\Address;
 use Illuminate\Notifications\Notifiable;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -57,6 +58,11 @@ class User extends Authenticatable
     public function accounts()
     {
         return $this->belongsToMany(Account::class);
+    }
+
+    public function activeAccounts()
+    {
+        return $this->belongsToMany(Account::class)->active();
     }
 
     public function addresses()

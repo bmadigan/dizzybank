@@ -10,6 +10,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('accounts/{account}')->uses('AccountsController@show')->name('accounts.show');
     Route::post('accounts')->uses('AccountsController@store')->name('accounts.store');
     Route::patch('accounts/{account}')->uses('AccountsController@update')->name('accounts.update');
-    //Route::post('articles', '\App\Domain\Accounts\Actions\CreateNewAccountAction');
-
 });
