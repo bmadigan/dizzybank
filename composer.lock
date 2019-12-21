@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cba12b24d18df600d984265c0fb5b153",
+    "content-hash": "336fecdc3532cf39a071ef2cd0568849",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2172,6 +2172,49 @@
                 "spatie"
             ],
             "time": "2019-09-04T07:08:44+00:00"
+        },
+        {
+            "name": "staudenmeir/eloquent-has-many-deep",
+            "version": "v1.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/staudenmeir/eloquent-has-many-deep.git",
+                "reference": "c87e8fb03071666d656e136c43b40a58d02950c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/staudenmeir/eloquent-has-many-deep/zipball/c87e8fb03071666d656e136c43b40a58d02950c8",
+                "reference": "c87e8fb03071666d656e136c43b40a58d02950c8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^6.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "illuminate/pagination": "^6.0",
+                "laravel/homestead": "^9.0",
+                "phpunit/phpunit": "^8.0",
+                "staudenmeir/eloquent-eager-limit": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Staudenmeir\\EloquentHasManyDeep\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonas Staudenmeir",
+                    "email": "mail@jonas-staudenmeir.de"
+                }
+            ],
+            "description": "Laravel Eloquent HasManyThrough relationship with unlimited levels",
+            "time": "2019-09-21T19:48:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

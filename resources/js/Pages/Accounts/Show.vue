@@ -72,7 +72,7 @@
                         {{ item.created_at | formatDate }}
                     </template>
                     <template v-slot:account="{ item }">
-                        {{ item.account_name }}
+                        {{ item.account.account_name }}
                     </template>
                     <template v-slot:description="{ item }">
                         {{ item.description }}
@@ -136,7 +136,7 @@ export default {
             ];
         },
         isAdded(transaction) {
-            if (transaction.type === "MoneyAdded") {
+            if (["MoneyAdded", "MoneyTransferredTo"].includes(transaction.type)) {
                 return true;
             } else {
                 return false;

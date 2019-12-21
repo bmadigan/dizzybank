@@ -3,15 +3,17 @@
 namespace App\Domain\Users\Models;
 
 use App\Domain\Accounts\Models\Account;
+use App\Domain\Accounts\Models\Transaction;
 use App\Domain\Accounts\States\Active;
 use App\Domain\Addresses\Models\Address;
 use Illuminate\Notifications\Notifiable;
 use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 class User extends Authenticatable
 {
-    use Notifiable, GeneratesUuid;
+    use Notifiable, GeneratesUuid, HasRelationships;
 
     /**
      * The attributes that are mass assignable.
@@ -68,5 +70,18 @@ class User extends Authenticatable
     public function addresses()
     {
         return $this->belongsToMany(Address::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasManyDeep(
+            Transaction::class,
+            ['account_user', Account::class]
+        )->orderBy('created_at', 'DESC')->where('accounts.state', 'active');
+    }
+
+    public function lastestTransactions($limit = 10)
+    {
+        return $this->transactions->take($limit);
     }
 }

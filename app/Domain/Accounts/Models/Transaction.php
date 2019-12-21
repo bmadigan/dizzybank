@@ -56,7 +56,7 @@ class Transaction extends Model
 
     public function displayAmount()
     {
-        if ($this->type === 'MoneySubtracted') {
+        if ($this->type === 'MoneySubtracted' || $this->type === 'MoneyTransferredFrom') {
             return '- ' . currency($this->amount);
         }
 

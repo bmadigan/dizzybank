@@ -2,6 +2,11 @@
 
 Auth::routes(['register' => false]);
 
+Route::get('/test', function () {
+    $user = auth()->user();
+    dd($user->transactions);
+});
+
 Route::group(['middleware' => ['auth']], function () {
     // Dash
     Route::get('/')->uses('DashboardController')->name('dashboard');

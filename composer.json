@@ -21,6 +21,7 @@
         "spatie/laravel-collection-macros": "^6.0",
         "spatie/laravel-event-sourcing": "^1.0",
         "spatie/laravel-model-states": "^1.4",
+        "staudenmeir/eloquent-has-many-deep": "^1.7",
         "tightenco/ziggy": "^0.8.1"
     },
     "require-dev": {
