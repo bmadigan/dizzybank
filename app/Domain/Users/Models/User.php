@@ -2,9 +2,10 @@
 
 namespace App\Domain\Users\Models;
 
+use App\Domain\Payments\Models\Payee;
+use App\Domain\Payments\Models\Payment;
 use App\Domain\Accounts\Models\Account;
 use App\Domain\Accounts\Models\Transaction;
-use App\Domain\Accounts\States\Active;
 use App\Domain\Addresses\Models\Address;
 use Illuminate\Notifications\Notifiable;
 use Dyrynda\Database\Support\GeneratesUuid;
@@ -72,14 +73,24 @@ class User extends Authenticatable
         return $this->belongsToMany(Address::class);
     }
 
+    public function payees()
+    {
+        return $this->hasMany(Payee::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
     public function transactions()
     {
         return $this->hasManyDeep(
             Transaction::class,
             ['account_user', Account::class]
         )
-        ->orderBy('created_at', 'DESC')
-        ->where('accounts.state', 'active');
+            ->orderBy('created_at', 'DESC')
+            ->where('accounts.state', 'active');
     }
 
     public function lastestTransactions($limit = 10)

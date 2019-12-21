@@ -44,10 +44,7 @@
                     <a href="#">Transaction History</a>
                 </div>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">Make A Payment</a>
-                </div>
-                <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">Payment History</a>
+                    <inertia-link :href="route('payments.index')">Bill Payments</inertia-link>
                 </div>
             </div>
             <div class="mt-8">

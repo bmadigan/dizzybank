@@ -13,4 +13,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Download Transactions
     Route::get('download-transactions')->uses('TransactionsExportController')->name('export.transactions');
+
+    // Payments & Payees
+    Route::get('payments')->uses('PaymentsController@index')->name('payments.index');
+    Route::post('payments')->uses('PaymentsController@store')->name('payments.store');
+    Route::post('payees')->uses('PayeesController@store')->name('payees.store');
 });
