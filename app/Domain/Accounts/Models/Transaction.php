@@ -11,6 +11,8 @@ class Transaction extends Model
 {
     use GeneratesUuid;
 
+    protected $with = ['account'];
+
     public function getRouteKeyName()
     {
         return 'uuid';

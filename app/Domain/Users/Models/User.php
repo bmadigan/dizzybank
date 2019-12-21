@@ -77,7 +77,9 @@ class User extends Authenticatable
         return $this->hasManyDeep(
             Transaction::class,
             ['account_user', Account::class]
-        )->orderBy('created_at', 'DESC')->where('accounts.state', 'active');
+        )
+        ->orderBy('created_at', 'DESC')
+        ->where('accounts.state', 'active');
     }
 
     public function lastestTransactions($limit = 10)

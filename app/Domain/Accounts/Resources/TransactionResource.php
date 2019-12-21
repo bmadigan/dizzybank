@@ -19,7 +19,7 @@ class TransactionResource extends JsonResource
             'uuid' => $this->uuid,
             'account_id' => $this->account_id,
             'transaction_date' => $this->created_at,
-            'account' => new AccountResource($this->account),
+            'account' => new AccountResource($this->whenLoaded('account')),
             'description' => $this->description,
             'type' => $this->type,
             'amount' => $this->amount,
