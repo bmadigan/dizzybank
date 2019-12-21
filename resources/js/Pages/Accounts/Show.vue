@@ -57,12 +57,18 @@
                         <span>Add Money</span>
                     </button>
 
-                    <button class="flex items-center btn-sm btn-indigo-lite">
-                        <svg viewBox="0 0 24 24" class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" fill-rule="evenodd" />
-                        </svg>
-                        <span>Download Transactions</span>
-                    </button>
+                    <a :href="route('export.transactions')" target="_blank">
+                        <button class="flex items-center btn-sm btn-indigo">
+                            <svg
+                                viewBox="0 0 24 24"
+                                class="fill-current w-4 h-4 mr-2"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" fill-rule="evenodd" />
+                            </svg>
+                            <span>Download Transactions</span>
+                        </button>
+                    </a>
                 </div>
             </div>
 
