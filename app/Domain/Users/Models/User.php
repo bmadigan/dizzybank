@@ -75,12 +75,12 @@ class User extends Authenticatable
 
     public function payees()
     {
-        return $this->hasMany(Payee::class);
+        return $this->hasMany(Payee::class)->orderBy('payee_name');
     }
 
     public function payments()
     {
-        return $this->hasMany(Payment::class);
+        return $this->hasMany(Payment::class)->orderBy('created_at', 'DESC');
     }
 
     public function transactions()

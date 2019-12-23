@@ -49,6 +49,12 @@ class Account extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function paymentMadeFromAccount($amount)
+    {
+        $this->balance -= $amount;
+        $this->save();
+    }
+
     public function transactions()
     {
         return $this->hasMany(Transaction::class)->orderBy('id', 'desc');

@@ -6,6 +6,8 @@ use Inertia\Inertia;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Domain\Accounts\Aggregates\AccountAggregate;
+use App\Domain\Accounts\Models\Account;
 use App\Domain\Payments\Aggregates\PaymentAggregate;
 use App\Domain\Payments\Requests\MakePaymentRequest;
 
@@ -27,6 +29,12 @@ class PaymentsController extends Controller
     public function store(MakePaymentRequest $request)
     {
         $newUuid = Str::uuid()->toString();
+
+        // // Account
+        // $account = Account::findOrFail(request()->accountId);
+        // $aggregateRoot = AccountAggregate::retrieve($account->uuid);
+        // $aggregateRoot->subtractMoney(convertCurrencyToCents(request()->withdraw_amount));
+        // $aggregateRoot->persist();
 
         PaymentAggregate::retrieve($newUuid)
             ->makePayment(convertCurrencyToCents(request()->amount), request()->accountId, request()->payeeId)

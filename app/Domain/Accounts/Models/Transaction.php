@@ -5,6 +5,8 @@ namespace App\Domain\Accounts\Models;
 use App\Support\Model;
 use App\Domain\Accounts\Events\MoneyAdded;
 use App\Domain\Accounts\Events\MoneySubtracted;
+use App\Domain\Payments\Events\PaymentMade;
+use App\Domain\Payments\Models\Payee;
 use Dyrynda\Database\Support\GeneratesUuid;
 
 class Transaction extends Model
@@ -56,9 +58,25 @@ class Transaction extends Model
         ]);
     }
 
+    public static function makePayment(PaymentMade $event, $uuid)
+    {
+        $account = Account::findOrFail($event->accountId);
+        $account->paymentMadeFromAccount($event->amount);
+        $payee = Payee::findOrFail($event->payeeId);
+        $type = self::getTransactionType($event);
+
+        self::create([
+            'account_id' => $event->accountId,
+            'description' => auth()->user()->name . ' made a payment to ' . $payee->payee_name,
+            'amount' => $event->amount,
+            'balance' => $account->balance,
+            'type' => $type,
+        ]);
+    }
+
     public function displayAmount()
     {
-        if ($this->type === 'MoneySubtracted' || $this->type === 'MoneyTransferredFrom') {
+        if ($this->type === 'MoneySubtracted' || $this->type === 'MoneyTransferredFrom' || $this->type === 'PaymentMade') {
             return '- ' . currency($this->amount);
         }
 

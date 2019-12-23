@@ -3,7 +3,7 @@
         name="manage-payees-modal"
         :draggable="false"
         :scrollable="true"
-        :height="450"
+        :height="420"
         :width="450"
         :clickToClose="false"
         classes="modal-container"

@@ -5,6 +5,7 @@ namespace App\Domain\Accounts\Projectors;
 //use App\Domain\Accounts\Events\AccountDeleted;
 use App\Domain\Accounts\Events\MoneyAdded;
 use App\Domain\Accounts\Events\MoneySubtracted;
+use App\Domain\Payments\Events\PaymentMade;
 use App\Domain\Accounts\Models\Transaction;
 use Spatie\EventSourcing\Projectors\Projector;
 use Spatie\EventSourcing\Projectors\ProjectsEvents;
@@ -21,6 +22,11 @@ final class TransactionProjector implements Projector
     public function onMoneySubtracted(MoneySubtracted $event, string $aggregateUuid)
     {
         Transaction::moneySubtracted($event, $aggregateUuid);
+    }
+
+    public function onMakePayment(PaymentMade $event, string $aggregateUuid)
+    {
+        Transaction::makePayment($event, $aggregateUuid);
     }
 
     // public function onAccountDeleted(string $aggregateUuid)
