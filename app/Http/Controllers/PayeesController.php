@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\Payments\Models\Payee;
 use Illuminate\Http\Request;
+use App\Domain\Payments\Models\Payee;
 use Illuminate\Support\Facades\Redirect;
 
 class PayeesController extends Controller

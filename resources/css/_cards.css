@@ -1,3 +1,7 @@
 .card {
     @apply bg-white rounded-lg shadow;
 }
+
+.card-footer {
+    @apply px-4 py-6 w-full bg-indigo-100;
+}

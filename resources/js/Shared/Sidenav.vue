@@ -50,10 +50,7 @@
             <div class="mt-8">
                 <p class="uppercase text-xs text-indigo-200 pb-4">Services</p>
                 <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">Transfer Money</a>
-                </div>
-                <div class="font-semibold text-sm text-white hover:text-indigo-200 pb-3">
-                    <a href="#">My Profile</a>
+                    <inertia-link :href="route('user.profile.edit')">My Profile</inertia-link>
                 </div>
             </div>
         </div>

@@ -1,3 +1,11 @@
 .text-xxs {
     font-size: 0.65rem;
 }
+
+.hr {
+    @apply my-10 border-b;
+}
+
+.text-help {
+    @apply text-gray-600 bg-indigo-100 p-2 my-2 text-sm;
+}

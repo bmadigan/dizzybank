@@ -6,6 +6,11 @@ Route::group(['middleware' => ['auth']], function () {
     // Dash
     Route::get('/')->uses('DashboardController')->name('dashboard');
 
+    // User Profile
+    Route::get('/user-profile')->uses('UserProfileController@edit')->name('user.profile.edit');
+    Route::patch('/user-profile')->uses('UserProfileController@update')->name('user.profile.update');
+    Route::patch('/user-profile/password')->uses('UserProfileController@password')->name('user.profile.password');
+
     // Accounts
     Route::get('accounts/{account}')->uses('AccountsController@show')->name('accounts.show');
     Route::post('accounts')->uses('AccountsController@store')->name('accounts.store');

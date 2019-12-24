@@ -18,7 +18,7 @@
             <div class="w-40">
                 <ul>
                     <li class="pl-2 pr-8 py-2 hover:bg-gray-200">
-                        <a href="#" class="block">Update Profile</a>
+                        <a :href="route('user.profile.edit')" class="block">Update Profile</a>
                     </li>
                     <li class="pl-2 pr-8 py-2 hover:bg-gray-200">
                         <a href="#" @click.prevent="logout">Logout</a>

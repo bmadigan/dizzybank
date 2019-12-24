@@ -3,3 +3,7 @@
 .form-input {
     @apply text-gray-700;
 }
+
+.text-label {
+    @apply text-sm text-gray-600;
+}

@@ -105,9 +105,6 @@ export default {
         DataTableHeader,
         DataTableRow
     },
-    mounted() {
-        document.title = `Payment History - ${this.$page.app.name}`;
-    },
     methods: {
         headers() {
             return [
@@ -118,6 +115,9 @@ export default {
                 { title: "Amount", key: "amount" }
             ];
         }
+    },
+    mounted() {
+        document.title = `Payment History - ${this.$page.app.name}`;
     }
 };
 </script>
