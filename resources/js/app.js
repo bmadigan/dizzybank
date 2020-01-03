@@ -46,9 +46,15 @@ Vue.filter("currency", function(amount) {
 });
 
 Vue.filter("money", function(amount) {
+    const formatter = new Intl.NumberFormat("en-US", {
+        style: "decimal",
+        currency: "USD",
+        minimumFractionDigits: 2
+    });
+
     const newAmount = amount / 100;
 
-    return newAmount;
+    return formatter.format(newAmount);
 });
 
 // Truncates by words and not by characters
