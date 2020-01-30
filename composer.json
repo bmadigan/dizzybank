@@ -54,6 +54,9 @@
         ]
     },
     "autoload-dev": {
+        "classmap": [
+            "tests/Support/CreatesBankAccount.php"
+        ],
         "psr-4": {
             "Tests\\": "tests/"
         },
