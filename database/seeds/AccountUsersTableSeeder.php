@@ -70,9 +70,9 @@ class AccountUsersTableSeeder extends Seeder
         $account->users();
 
         $me = $account->users()->save(factory(User::class)->create([
-            'name'                  => 'Brad Madigan',
-            'email'                 => 'bradmadigan@gmail.com',
-            'password'              => bcrypt('password')
+            'name'                  => 'Ron Slater',
+            'email'                 => 'slater@email.com',
+            'password'              => bcrypt('secret')
         ]));
 
         $me->addresses()->save(factory(Address::class)->create());

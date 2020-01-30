@@ -1,78 +1,65 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA5NiIgaGVpZ2h0PSIzNTAiIHZpZXdCb3g9IjAgMCAxMDk2IDM1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMTQwLjAxMiAyNzAuMTc4VjM1MGwxMzkuOTg2LTgwLjg1NnYtNzkuODEybC0xMzkuOTg2IDgwLjg0NnoiIGZpbGw9IiM2NjdFRUEiLz4KICA8cGF0aCBkPSJNMjAyLjY3NiAxMTYuMDE1bDY5LjA3MS0zOS45MTJMMTQwLjAxMiAwdjc5LjgybDYyLjY2NCAzNi4xOTV6IiBmaWxsPSIjNEM1MUJGIi8+CiAgPHBhdGggZD0iTTg1LjYwNyAxMzkuODQ4djc5Ljg0Nmw1NC40MDMgMzEuNDE3di03OS44MWwtNTQuNDAzLTMxLjQ1M3oiIGZpbGw9IiNBM0JGRkEiLz4KICA8cGF0aCBkPSJNMjc5Ljk5OCA5MC40MWwtMTM5Ljk4NiA4MC44OTF2NzkuODFsMTM5Ljk4Ni04MC44NTdWOTAuNDExek04LjMzNiA3Ni4wNTdsNjguNjU3IDQwLjE0NUwxNDAuMDEgNzkuODJWMEw4LjMzNiA3Ni4wNTd6IiBmaWxsPSIjNjY3RUVBIi8+CiAgPHBhdGggZD0iTTY5LjA5NSAyMjkuMjMzdi05OC45NkwwIDkwLjM3NHYxNzguNzY3bDE0MC4wMDkgODAuODU3di03OS44MjJsLTcwLjkxNC00MC45NDN6IiBmaWxsPSIjQTNCRkZBIi8+CiAgPHBhdGggZD0iTTM3Ni45MDEgMTI4LjcwOWM5LjUzMSAwIDE3Ljg2IDEuOTMyIDI0Ljk4NyA1Ljc5NiA3LjIxMiAzLjc3OCAxMi43NTEgOS4xMDIgMTYuNjE1IDE1Ljk3MSAzLjg2NCA2Ljg2OSA1Ljc5NiAxNC43MjYgNS43OTYgMjMuNTcgMCA4Ljc1OS0xLjk3NSAxNi41NzItNS45MjUgMjMuNDQyLTMuODY0IDYuODY5LTkuNDAyIDEyLjI3OS0xNi42MTUgMTYuMjI5LTcuMTI3IDMuODY0LTE1LjQxMyA1Ljc5Ni0yNC44NTggNS43OTZoLTM1LjkzNXYtOTAuODA0aDM1LjkzNXptLTEuOTMyIDY4LjUyMWM3LjM4NCAwIDEzLjE4LTIuMDE4IDE3LjM4OC02LjA1MyA0LjIwNy00LjAzNiA2LjMxMS05Ljc0NiA2LjMxMS0xNy4xMzEgMC03LjQ3LTIuMTA0LTEzLjIyMy02LjMxMS0xNy4yNTktNC4yMDgtNC4xMjEtMTAuMDA0LTYuMTgyLTE3LjM4OC02LjE4MmgtOC43NTl2NDYuNjI1aDguNzU5ek00NjAuOTIzIDEyOC43MDl2OTAuODA0aC0yNS4yNDV2LTkwLjgwNGgyNS4yNDV6TTUwMi44NjIgMTk5LjAzM2gzNy43Mzl2MjAuNDhoLTY2LjA3NHYtMTkuMTkybDM3LjM1MS01MS4yNjJoLTM3LjM1MXYtMjAuMzVoNjYuMDc0VjE0Ny45bC0zNy43MzkgNTEuMTMzek01ODEuODUzIDE5OS4wMzNoMzcuNzM4djIwLjQ4aC02Ni4wNzR2LTE5LjE5MmwzNy4zNTItNTEuMjYyaC0zNy4zNTJ2LTIwLjM1aDY2LjA3NFYxNDcuOWwtMzcuNzM4IDUxLjEzM3pNNzE1Ljg0IDEyOC43MDlsLTMxLjk0MiA2MS45NTJ2MjguODUyaC0yNS4zNzN2LTI4Ljg1MmwtMzEuOTQzLTYxLjk1MmgyOC44NTFsMTUuOTcyIDM1LjAzMyAxNS45NzEtMzUuMDMzaDI4LjQ2NHoiIGZpbGw9IiM0QzUxQkYiLz4KICA8cGF0aCBkPSJNNzg3LjMxIDE3Mi44ODdjNS4zMjQgMS4yMDIgOS41MzEgMy44NjQgMTIuNjIyIDcuOTg2IDMuMTc3IDQuMDM1IDQuNzY2IDguNjcyIDQuNzY2IDEzLjkxIDAgNy43MjgtMi42NjIgMTMuNzgyLTcuOTg2IDE4LjE2MS01LjMyMyA0LjM3OS0xMi43OTQgNi41NjktMjIuNDExIDYuNTY5SDcyOS4zNXYtOTAuODA0aDQzLjUzNGM5LjI3NCAwIDE2LjUzIDIuMDYxIDIxLjc2NyA2LjE4MiA1LjMyNCA0LjEyMiA3Ljk4NiA5LjkxOCA3Ljk4NiAxNy4zODggMCA1LjMyNC0xLjQxNyA5Ljc4OS00LjI1IDEzLjM5NS0yLjc0OCAzLjUyMS02LjQ0IDUuOTI1LTExLjA3NyA3LjIxM3ptLTMyLjcxNS04LjExNGgxMi43NTFjNi4zNTQgMCA5LjUzMS0yLjYxOSA5LjUzMS03Ljg1NyAwLTUuNDEtMy4xNzctOC4xMTQtOS41MzEtOC4xMTRoLTEyLjc1MXYxNS45NzF6bTE0LjY4MyAzNC4zODljNi4zNTQgMCA5LjUzMS0yLjY2MiA5LjUzMS03Ljk4NSAwLTIuNzQ4LS44NTktNC44NTItMi41NzYtNi4zMTItMS42MzEtMS40NTktMy45OTMtMi4xODktNy4wODQtMi4xODloLTE0LjU1NHYxNi40ODZoMTQuNjgzek04NzMuMjA2IDIwNC43MDFoLTMyLjJsLTQuODk0IDE0LjgxMmgtMjYuNTMzbDMzLjEwMi05MC44MDRoMjkuMTA4bDMyLjk3MyA5MC44MDRIODc4LjFsLTQuODk0LTE0LjgxMnptLTYuMzExLTE5LjMybC05Ljc4OS0yOS4zNjctOS42NiAyOS4zNjdoMTkuNDQ5ek05OTcuMDk2IDIxOS41MTNoLTI1LjI0NWwtMzMuNjE2LTUwLjc0OHY1MC43NDhIOTEyLjk5di05MC44MDRoMjUuMjQ1bDMzLjYxNiA1MS4zOTF2LTUxLjM5MWgyNS4yNDV2OTAuODA0ek0xMDY1LjE5IDIxOS41MTNsLTI4LjQ3LTM5Ljh2MzkuOGgtMjUuMjR2LTkwLjgwNGgyNS4yNHYzOS4xNTVsMjguMjEtMzkuMTU1aDI5LjExbC0zMy4zNiA0NC4wNDkgMzUuMDMgNDYuNzU1aC0zMC41MnoiIGZpbGw9IiMyRDM3NDgiLz4KPC9zdmc+Cg==" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## What Is Dizzybank?
 
-## About Laravel
+Dizzybank is a simple [Laravel](https://laravel.com) application that is currently being developed to act as a banking / fintech SaaS app.  The idea of the app is to learn the [Spaties Event Sourcing package](https://docs.spatie.be/laravel-event-sourcing/) and to eventually act as an API for an upcoming [Flutter Mobile](https://flutter.dev/) application that I am building to learn the Flutter/Dart language.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> **Please Note:** This application is still being developed
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## What Dizzybank Is Not?
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Dizzybank is not meant to act as a production ready fintech application, rather the idea is to be used to power the API for a simple upcoming Mobile App.
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clone the repository:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+git clone https://github.com/bmadigan/dizzybank.git dizzybank
+cd dizzybank
+```
 
-## Laravel Sponsors
+Install Composer Packages
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+`composer install`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+Install NPM dependencies:
 
-## Contributing
+`npm ci`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Build assets:
 
-## Code of Conduct
+`npm run dev`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Setup configuration:
 
-## Security Vulnerabilities
+`cp .env.example .env`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Generate application key:
+
+`php artisan key:generate`
+
+Create an SQLite database. You can also use another database (MySQL, Postgres), simply update your configuration accordingly.
+
+`touch database/database.sqlite`
+
+Run database migrations:
+
+`php artisan migrate`
+
+Run database seeder:
+
+`php artisan db:seed`
+
+Run the dev server (the output will give the address):
+
+`php artisan serve`
+
+You're ready to go! Visit Dizzybank in your browser, and login with:
+
+    Username: slater@email.com
+    Password: secret
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Dizzybank application is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
