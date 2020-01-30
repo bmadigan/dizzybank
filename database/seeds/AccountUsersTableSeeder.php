@@ -84,7 +84,6 @@ class AccountUsersTableSeeder extends Seeder
 
         $users->map(function ($user) {
             $aid = $user->addresses->first() ? $user->addresses->first()->id : null;
-            //dd($aid);
             $user->profile()->create([
                 'profile_name' => $user->name . ' Account',
                 'address_id' => $aid,

@@ -1,0 +1,48 @@
+Banking / FinTech app
+
+https://github.com/staudenmeir/eloquent-has-many-deep
+
+Readup on this more:
+https://stackoverflow.com/questions/58215808/laravel-event-sourcing-spatie-how-to-deal-with-more-complex-business-rules
+
+ACTIONS:
+https://stitcher.io/blog/organise-by-domain - To go section
+Installed this:
+https://github.com/lorisleiva/laravel-actions
+
+
+Business Logic Features
+=======================
+
+Payments
+  - A user can create a Payment (eg. Phonebill, etc.)
+
+
+A User can create a new account.
+A User can DepositMoney and Widthdraw Money from accounts.
+A User can transfer Money from one account to another.
+A User can view transaction history
+A User can download CSV of 30 days transactions.
+A User can pay a bill
+
+FUTURE:
+- Ability to add Debit/Credit Cards
+- Do CC/Dbt Transactions with the mobile app
+- Send someone else (email) Money?
+
+
+
+Landing Page Designs:
+Great Looking Landing Page and Mobile App Design
+https://www.behance.net/gallery/80961797/Owner-Bank-iOS-Application
+the top part is nice
+http://www.studentshow.com/gallery/59073913/Daqatra-Meet-your-doctor-online
+Do I want to use one of these ideas?
+http://preview.themeforest.net/item/appbeats-app-landing-page/full_screen_preview/25322924
+
+Mobile Designs:
+
+
+This video is good for learning how to design inFlutter and not a bad design
+https://www.youtube.com/watch?v=h-igXZCCrrc
+Here is GitRepo: https://github.com/MarcusNg/flutter_chat_ui_starter
