@@ -6,6 +6,8 @@ Dizzybank is a simple [Laravel](https://laravel.com) application that is current
 
 > **Please Note:** This application is still being developed
 
+<p><img src="https://github.com/bmadigan/dizzybank/blob/master/public/app-screenshot.png" width="860"></p>
+
 ## What Dizzybank Is Not?
 
 Dizzybank is not meant to act as a production ready fintech application, rather the idea is to be used to power the API for a simple upcoming Mobile App.
