@@ -12,6 +12,13 @@ Dizzybank is a simple [Laravel](https://laravel.com) application that is current
 
 Dizzybank is not meant to act as a production ready fintech application, rather the idea is to be used to power the API for a simple upcoming Mobile App.
 
+## Tech-Stack
+
+- [Laravel 6.6](https://laravel.com)
+- [InertiaJS](https://inertiajs.com)
+- [Tailwind CSS](https://tailwindcss.com)
+- [VueJS](https://vuejs.org)
+
 ## Installation
 
 Clone the repository:
